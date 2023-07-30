@@ -58,13 +58,6 @@ return require('packer').startup(function(use)
     -- Word
     use 'jspringyc/vim-word'
 
-    -- Nvimtreesitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        config = function() require('config.nvim-treesitter') end
-    }
-
     -- line
     use {
         "lukas-reineke/indent-blankline.nvim",
