@@ -68,11 +68,27 @@ return require('packer').startup(function(use)
         config = function() require('config.nvim-line') end
     }
 
-    -- Markdown
-    
+    -- Auto
+    use {
+       "windwp/nvim-autopairs",
+        after = 'nvim-cmp',
+        config = [[require('config.nvim-autopairs')]],
+    }
+
     -- nvim-lsp
     use { 'williamboman/mason.nvim' }
     use { 'williamboman/mason-lspconfig.nvim'}
+
+    -- Treesitter-integration
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+        config = [[require('config.nvim-treesitter')]],
+    }
+
     -- Dashboard
     use {
         "goolord/alpha-nvim",

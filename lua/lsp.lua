@@ -11,7 +11,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'bashls', 'rust_analyzer', 'clangd' },
+    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'bashls', 'rust_analyzer', 'clangd', 'cssls', 'html', 'jsonls', 'yamlls' },
 })
 
 
@@ -114,5 +114,21 @@ lspconfig.rust_analyzer.setup({
 })
 
 lspconfig.clangd.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.cssls.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.html.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.jsonls.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.yamlls.setup({
     on_attach = on_attach,
 })
