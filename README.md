@@ -19,5 +19,9 @@ echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
 npm install -g neovim
+
+cd ~\AppData\Local\nvim-data\site\pack\packer\start\markdown-preview.nvim
+npm install
+npm build
 ```
 
