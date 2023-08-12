@@ -11,7 +11,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'bashls', 'rust_analyzer', 'clangd', 'cssls', 'html', 'jsonls', 'yamlls' },
+    ensure_installed = { 'clangd', 'pylsp', 'lua_ls', 'bashls', 'rust_analyzer', 'cssls', 'html', 'jsonls', 'yamlls' },
 })
 
 
@@ -67,10 +67,6 @@ end
 -- 1. use `:Mason` to install corresponding LSP
 -- 2. add configuration below
 lspconfig.pylsp.setup({
-    on_attach = on_attach,
-})
-
-lspconfig.gopls.setup({
     on_attach = on_attach,
 })
 

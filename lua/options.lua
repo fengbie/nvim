@@ -1,5 +1,5 @@
 --python
---vim.g.python3_host_prog = vim.fn.expand('~/.conda/envs/nvim/bin/python3')
+vim.g.python3_host_prog = vim.fn.expand('~/.conda/envs/nvim/bin/python3')
 
 -- Use system clipboard for copying and pasting
 vim.opt.clipboard = 'unnamedplus'
@@ -37,38 +37,39 @@ vim.o.encoding = 'utf-8'       -- Set the character encoding to UTF-8
 vim.cmd('syntax enable')       -- Enable syntax highlighting
 vim.o.undofile = true          -- Enable persistent undo
 vim.o.swapfile = false         -- Disable swap files
-local home = os.getenv('USERPROFILE')
+--local home = os.getenv('USERPROFILE')
+local home = os.getenv('HOME')
 vim.o.undodir = home .. '/.vim/.undo//'    -- Set the directory for undo files
 vim.o.backupdir = home .. '/.vim/.backup//'  -- Set the directory for backup files
 vim.o.directory = home .. '/.vim/.swp//'     -- Set the directory for swap files
 
 -- Initialize a variable to toggle input method
---vim.g.input_toggle = 1
+vim.g.input_toggle = 1
 
 -- Switch to the English input method
---function Fcitx2en()
---    local input_status = vim.fn.system("fcitx5-remote")
---    if input_status == "2\n" then
---        vim.g.input_toggle = 1
---        vim.fn.system("fcitx5-remote -c")
---    end
---end
+function Fcitx2en()
+    local input_status = vim.fn.system("fcitx5-remote")
+    if input_status == "2\n" then
+        vim.g.input_toggle = 1
+        vim.fn.system("fcitx5-remote -c")
+    end
+end
 
 -- Switch to the Chinese input method
---function Fcitx2zh()
---    local input_status = vim.fn.system("fcitx5-remote")
---    if input_status ~= "2\n" then
---        vim.fn.system("fcitx5-remote -o")
---        vim.g.input_toggle = 0
---    end
---end
+function Fcitx2zh()
+    local input_status = vim.fn.system("fcitx5-remote")
+    if input_status ~= "2\n" then
+        vim.fn.system("fcitx5-remote -o")
+        vim.g.input_toggle = 0
+    end
+end
 
 -- Set the 'ttimeoutlen' option to 150 (unit: milliseconds)
---vim.o.timeoutlen = 100
+vim.o.timeoutlen = 100
 
 -- Switch to the English input method when exiting insert mode
---vim.cmd("autocmd InsertLeave * lua Fcitx2en()")
+vim.cmd("autocmd InsertLeave * lua Fcitx2en()")
 
 -- Switch to the Chinese input method when entering insert mode
---vim.cmd("autocmd InsertEnter * lua Fcitx2en()")
+vim.cmd("autocmd InsertEnter * lua Fcitx2en()")
 

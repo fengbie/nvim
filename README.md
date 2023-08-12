@@ -4,6 +4,8 @@
 
 ## premise
 ```bash
+yay -S unzip
+
 yay -S anaconda
 
 source /opt/anaconda/bin/activate root
