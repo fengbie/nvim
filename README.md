@@ -13,6 +13,7 @@ conda create -n nvim python=3.10
 source activate nvim
 pip3 install neovim
 
+sudo apt-get install python3-venv #ubuntu
 yay -S nodejs npm
 
 mkdir ~/.npm-global
