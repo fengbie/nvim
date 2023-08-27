@@ -62,6 +62,8 @@ return require('packer').startup(function(use)
     -- Word
     use 'jspringyc/vim-word'
 
+    -- Sudo
+    use 'lambdalisue/suda.vim'
     -- line
     use {
         "lukas-reineke/indent-blankline.nvim",
