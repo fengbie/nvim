@@ -8,6 +8,8 @@ yay -S unzip
 
 yay -S anaconda
 
+yay -S fortune-mod
+
 source /opt/anaconda/bin/activate root
 conda create -n nvim python=3.10
 source activate nvim

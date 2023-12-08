@@ -8,6 +8,12 @@ local opts = {
 -- Normal mode --
 -----------------
 
+-- CmakeCode
+vim.keymap.set('n', '<F10>', ':make<CR>', opts)
+
+-- CodeCPP
+--vim.keymap.set('n', '<F11>', ':gcc -<CR>', opts)
+
 -- WordCount
 vim.keymap.set('n', '<A-w>', ':WordCount<CR>', opts)
 
