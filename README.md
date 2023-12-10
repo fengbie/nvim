@@ -8,6 +8,8 @@ yay -S unzip
 
 yay -S xclip 
 
+yay -S clang
+
 yay -S anaconda
 
 yay -S fortune-mod
